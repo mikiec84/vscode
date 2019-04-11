@@ -36,10 +36,12 @@ suite('workspace-namespace', () => {
 	});
 
 	test('rootPath', () => {
-		if (vscode.workspace.rootPath) {
-			assert.ok(pathEquals(vscode.workspace.rootPath, join(__dirname, '../../testWorkspace')));
-		}
+		assert.ok(pathEquals(vscode.workspace.rootPath!, join(__dirname, '../../testWorkspace')));
 		assert.throws(() => (vscode.workspace as any).rootPath = 'farboo');
+	});
+
+	test('uri', () => {
+		assert.ok(pathEquals(vscode.workspace.uri!.fsPath, join(__dirname, '../../testWorkspace')));
 	});
 
 	test('workspaceFolders', () => {

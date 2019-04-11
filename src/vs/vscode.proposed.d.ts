@@ -1396,4 +1396,17 @@ declare module 'vscode' {
 		readonly portMapping?: ReadonlyArray<WebviewPortMapping>;
 	}
 	//#endregion
+
+	//#region Workspace URI bpasero
+
+	export namespace workspace {
+
+		/**
+		 * The location of the workspace. `undefined` when no folder
+		 * has been opened.
+		 */
+		export const uri: Uri | undefined;
+	}
+
+	//#endregion
 }
